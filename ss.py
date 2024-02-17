@@ -1,18 +1,20 @@
-import tkinter as tk
-import os, tk
+from kivy.app import App
+from kivy.uix.button import Button
+from kivy.uix.label import Label
+from kivy.uix.boxlayout import BoxLayout
 
-def execute_command():
-    command = "echo 'Button Clicked!'"
-    os.system("termux-open -a com.termux.app.TermuxActivity -e {}".format(command))
+class MyApp(App):
+    def build(self):
+        layout = BoxLayout(orientation='vertical')
+        label = Label(text='Hello, Termux!')
+        button = Button(text='Click Me', on_press=self.on_button_click)
+        layout.add_widget(label)
+        layout.add_widget(button)
+        return layout
 
-# Create a window
-root = tk.Tk()
-root.title("Interactive Termux")
+    def on_button_click(self, instance):
+        print('Button Clicked!')
 
-# Create a button
-button = tk.Button(root, text="Click Me", command=execute_command)
-button.pack(pady=20)
-
-# Run the Tkinter main loop
-root.mainloop()
-###"Execute Command", command=e
+if __name__ == '__main__':
+    MyApp().run()
+    ##
