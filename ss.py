@@ -1,20 +1,15 @@
-from kivy.app import App
-from kivy.uix.button import Button
-from kivy.uix.label import Label
-from kivy.uix.boxlayout import BoxLayout
+import tkinter as tk
 
-class MyApp(App):
-    def build(self):
-        layout = BoxLayout(orientation='vertical')
-        label = Label(text='Hello, Termux!')
-        button = Button(text='Click Me', on_press=self.on_button_click)
-        layout.add_widget(label)
-        layout.add_widget(button)
-        return layout
+def get_input():
+    print(entry.get())
 
-    def on_button_click(self, instance):
-        print('Button Clicked!')
+root = tk.Tk()
+root.title("Entry Example")
 
-if __name__ == '__main__':
-    MyApp().run()
-    ##
+entry = tk.Entry(root)
+entry.pack()
+
+button = tk.Button(root, text="Get Input", command=get_input)
+button.pack()
+
+root.mainloop()
