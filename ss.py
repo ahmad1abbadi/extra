@@ -1,5 +1,4 @@
-import tkinter as tk
-import os
+import os, tk
 
 def execute_command():
     command = "echo 'Button Clicked!'"
