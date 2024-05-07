@@ -50,8 +50,8 @@ def check_current_theme():
                     os.system(f"tar -xJvf {theme_path} -C $HOME &>/dev/null")
                     time.sleep(1)
                     stop_darkos()
-            elif theme_content == "windows10":
-                theme_path = "/data/data/com.termux/files/usr/glibc/opt/personalise/downlaod/windows10.tar.xz"
+            elif theme_content == "windows":
+                theme_path = "/data/data/com.termux/files/usr/glibc/opt/personalise/downlaod/windows.tar.xz"
                 if os.path.exists(theme_path):
                     remove_theme()
                     time.sleep(1)
