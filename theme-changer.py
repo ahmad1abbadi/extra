@@ -26,7 +26,7 @@ def check_current_theme():
     if os.path.isfile(custom_theme):
         with open(custom_theme, 'r') as f:
             theme_content = f.read()
-            if theme_content == "android_theme":
+            if theme_content == "android":
                 theme_path = "/data/data/com.termux/files/usr/glibc/opt/personalise/downlaod/android.tar.xz"
                 if os.path.exists(theme_path):
                     remove_theme()
@@ -34,7 +34,7 @@ def check_current_theme():
                     os.system(f"tar -xJvf {theme_path} -C $HOME &>/dev/null")
                     time.sleep(1)
                     stop_darkos()                
-            elif theme_content == "macos_theme":
+            elif theme_content == "macos":
                 theme_path = "/data/data/com.termux/files/usr/glibc/opt/personalise/downlaod/macos.tar.xz"
                 if os.path.exists(theme_path):
                     remove_theme()
@@ -42,7 +42,7 @@ def check_current_theme():
                     os.system(f"tar -xJvf {theme_path} -C $HOME &>/dev/null")
                     time.sleep(1)
                     stop_darkos()
-            elif theme_content == "manjaro_theme":
+            elif theme_content == "manjaro":
                 theme_path = "/data/data/com.termux/files/usr/glibc/opt/personalise/downlaod/manjaro.tar.xz"
                 if os.path.exists(theme_path):
                     remove_theme()
@@ -50,7 +50,7 @@ def check_current_theme():
                     os.system(f"tar -xJvf {theme_path} -C $HOME &>/dev/null")
                     time.sleep(1)
                     stop_darkos()
-            elif theme_content == "windows10_theme":
+            elif theme_content == "windows10":
                 theme_path = "/data/data/com.termux/files/usr/glibc/opt/personalise/downlaod/windows10.tar.xz"
                 if os.path.exists(theme_path):
                     remove_theme()
